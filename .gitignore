@@ -20,7 +20,7 @@ target/
 **/mvnw.cmd
 **/.mvn
 **/target/
-**/.gitignore
+/**/.gitignore
 
 ### Maven ###
 pom.xml.tag
