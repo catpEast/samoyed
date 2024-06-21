@@ -10,8 +10,9 @@
     <version>${reversion}</version>
     
     <modules>
-        <module>samoyed-code-generator</module>
-        <module>samoyed-commons</module>
+        <module>samoyed-framework</module>
+        <module>samoyed-module-infra</module>
+        <module>samoyed-dependencies</module>
     </modules>
 
     <properties>
