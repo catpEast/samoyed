@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>com.samoyed</groupId>
+        <artifactId>samoyed-framework</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+
+    <artifactId>samoyed-spring-boot-starter-biz-data-permission</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.samoyed</groupId>
+            <artifactId>samoyed-common</artifactId>
+        </dependency>
+
+        <!-- Web 相关 -->
+        <dependency>
+            <groupId>com.samoyed</groupId>
+            <artifactId>samoyed-spring-boot-starter-security</artifactId>
+            <optional>true</optional> <!-- 可选，如果使用 DeptDataPermissionRule 必须提供 -->
+        </dependency>
+
+        <!-- DB 相关 -->
+        <dependency>
+            <groupId>com.samoyed</groupId>
+            <artifactId>samoyed-spring-boot-starter-mybatis</artifactId>
+        </dependency>
+
+        <!--&lt;!&ndash; 业务组件 &ndash;&gt;-->
+        <!--<dependency>-->
+        <!--    <groupId>cn.iocoder.boot</groupId>-->
+        <!--    <artifactId>yudao-module-system-api</artifactId> &lt;!&ndash; 需要使用它，进行数据权限的获取 &ndash;&gt;-->
+        <!--    <version>${revision}</version>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash; Test 测试相关 &ndash;&gt;-->
+        <!--<dependency>-->
+        <!--    <groupId>cn.iocoder.boot</groupId>-->
+        <!--    <artifactId>yudao-spring-boot-starter-test</artifactId>-->
+        <!--    <scope>test</scope>-->
+        <!--</dependency>-->
+    </dependencies>
+</project>

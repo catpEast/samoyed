@@ -2,27 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+    
     <parent>
         <groupId>com.samoyed</groupId>
-        <artifactId>samoyed</artifactId>
+        <artifactId>samoyed-framework</artifactId>
         <version>${revision}</version>
     </parent>
-    <packaging>pom</packaging>
-    <artifactId>samoyed-framework</artifactId>
+    <packaging>jar</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    
+    <artifactId>samoyed-spring-boot-starter-security</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
-    <modules>
-        <module>samoyed-common</module>
-        <module>samoyed-spring-boot-starter-biz-data-permission</module>
-        <module>samoyed-spring-boot-starter-mybatis</module>
-        <module>samoyed-spring-boot-starter-security</module>
-        <module>samoyed-spring-boot-starter-web</module>
-    </modules>
 
 </project>
