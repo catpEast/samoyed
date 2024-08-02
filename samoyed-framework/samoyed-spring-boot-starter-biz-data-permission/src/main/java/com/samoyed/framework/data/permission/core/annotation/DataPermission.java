@@ -1,5 +1,6 @@
 package com.samoyed.framework.data.permission.core.annotation;
 
+import com.samoyed.framework.data.permission.core.rule.DataPermissionRule;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -20,6 +21,14 @@ public @interface DataPermission {
      * 是否开启数据权限
      */
     boolean enable() default true;
-    
-    Class<? extends DataP>
+
+    /**
+     * 生效的数据权限规则数组，优先级高于 {@link #excludeRules()}
+     */
+    Class<? extends DataPermissionRule>[] includeRules() default {};
+
+    /**
+     * 排除的数据权限规则数组，优先级最低
+     */
+    Class<? extends DataPermissionRule>[] excludeRules() default {};
 }

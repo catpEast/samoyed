@@ -1,11 +1,12 @@
 package com.samoyed.framework.data.permission.core.rule;
 
+import com.baomidou.mybatisplus.core.metadata.TableInfoHelper;
 import java.util.Set;
+import net.sf.jsqlparser.expression.Alias;
+import net.sf.jsqlparser.expression.Expression;
 
 /**
- * @Author wyz
- * @Date 2024/8/1 18:54
- * @Description
+ * 数据权限规则接口
  */
 public interface DataPermissionRule {
 
@@ -19,6 +20,8 @@ public interface DataPermissionRule {
      */
     Set<String> getTableNames();
 
-
-    // Expression
+    /**
+     * 根据表名和别名，生成对应的 WHERE / OR 过滤条件
+     */
+    Expression getExpression(String tableName, Alias tableAlias);
 }
