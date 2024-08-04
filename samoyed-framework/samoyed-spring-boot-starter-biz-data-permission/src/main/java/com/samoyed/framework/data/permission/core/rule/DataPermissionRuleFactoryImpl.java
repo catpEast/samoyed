@@ -1,10 +1,13 @@
 package com.samoyed.framework.data.permission.core.rule;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.util.ArrayUtil;
 import com.samoyed.framework.data.permission.core.annotation.DataPermission;
 import com.samoyed.framework.data.permission.core.aop.DataPermissionContextHolder;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import lombok.RequiredArgsConstructor;
 
 /**
@@ -38,6 +41,22 @@ public class DataPermissionRuleFactoryImpl implements DataPermissionRuleFactory{
             return rules;
         }
         
-        return Collections.emptyList();
+        // 3. 配置，但禁用
+        if (!dataPermission.enable()) {
+            return Collections.emptyList();
+        }
+
+        // 4. 已配置，只选择部分规则
+        if (ArrayUtil.isNotEmpty(dataPermission.includeRules())) {
+            return rules.stream().filter(rule -> ArrayUtil.contains(dataPermission.includeRules(), rule.getClass()))
+                    .collect(Collectors.toList()); // 一般规则不会太多，所以不采用 HashSet 查询
+        }
+        // 5. 已配置，只排除部分规则
+        if (ArrayUtil.isNotEmpty(dataPermission.excludeRules())) {
+            return rules.stream().filter(rule -> !ArrayUtil.contains(dataPermission.excludeRules(), rule.getClass()))
+                    .collect(Collectors.toList()); // 一般规则不会太多，所以不采用 HashSet 查询
+        }
+        // 6. 已配置，全部规则
+        return rules;
     }
 }
