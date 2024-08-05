@@ -21,6 +21,9 @@ public class DataPermissionRuleHandler implements MultiDataPermissionHandler {
             if (rules == null || rules.isEmpty()) {
                 return null;
             }
+        } finally {
             
+        }
+        return null;
     }
 }
