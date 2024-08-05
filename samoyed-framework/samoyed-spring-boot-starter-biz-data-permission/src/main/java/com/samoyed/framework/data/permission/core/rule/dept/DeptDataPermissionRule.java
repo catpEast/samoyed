@@ -1,11 +1,14 @@
 package com.samoyed.framework.data.permission.core.rule.dept;
 
+import com.baomidou.mybatisplus.core.metadata.TableInfoHelper;
 import com.samoyed.framework.data.permission.core.rule.DataPermissionRule;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import com.samoyed.framework.mybatis.core.dataobject.BaseDO;
 import lombok.AllArgsConstructor;
 import net.sf.jsqlparser.expression.Alias;
 import net.sf.jsqlparser.expression.Expression;
@@ -49,5 +52,23 @@ public class DeptDataPermissionRule implements DataPermissionRule {
     @Override
     public Expression getExpression(String tableName, Alias tableAlias) {
         return null;
+    }
+
+
+
+    public void addDeptColumn(Class<? extends BaseDO> entityClass, String columnName) {
+        String tableName = TableInfoHelper.getTableInfo(entityClass).getTableName();
+        addDeptColumn(tableName, columnName);
+    }
+
+
+    public void addDeptColumn(String tableName, String columnName) {
+        deptColumns.put(tableName, columnName);
+        tableNames.add(tableName);
+    }
+    
+    public void addUserColumn(String tableName, String columnName) {
+        userColumns.put(tableName, columnName);
+        tableNames.add(tableName);
     }
 }

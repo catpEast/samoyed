@@ -6,8 +6,6 @@ import org.springframework.aop.Pointcut;
 import org.springframework.aop.support.ComposablePointcut;
 import org.springframework.aop.support.annotation.AnnotationMatchingPointcut;
 
-import java.lang.annotation.Annotation;
-
 public class DataPermissionAnnotationAdvisor {
     
     private final Advice advice;
