@@ -6,6 +6,7 @@ import org.springframework.aop.support.ComposablePointcut;
 import org.springframework.aop.support.annotation.AnnotationMatchingPointcut;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.annotation.AnnotationUtils;
+import org.springframework.scheduling.config.CronTask;
 import org.springframework.util.ReflectionUtils;
 
 import javax.xml.crypto.Data;
@@ -29,9 +30,9 @@ public class MyTest {
 
     @Test
     public void test() {
+        
         Semaphore semaphore = new Semaphore(THREAD_COUNT);
         CountDownLatch countDownLatch = new CountDownLatch(EXECUTE_COUNT);
-
         ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i = 0; i < EXECUTE_COUNT; i++) {
             executorService.execute(() -> {

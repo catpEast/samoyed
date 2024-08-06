@@ -2,7 +2,6 @@ package com.samoyed.framework.data.permission.core.rule.dept;
 
 import com.baomidou.mybatisplus.core.metadata.TableInfoHelper;
 import com.samoyed.framework.data.permission.core.rule.DataPermissionRule;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;

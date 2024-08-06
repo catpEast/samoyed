@@ -5,25 +5,28 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.samoyed</groupId>
-        <artifactId>samoyed</artifactId>
+        <artifactId>samoyed-framework</artifactId>
         <version>${revision}</version>
     </parent>
-    <packaging>pom</packaging>
-    <artifactId>samoyed-framework</artifactId>
+
+    <artifactId>samoyed-spring-boot-starter-job</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
-    <modules>
-        <module>samoyed-common</module>
-        <module>samoyed-spring-boot-starter-biz-data-permission</module>
-        <module>samoyed-spring-boot-starter-mybatis</module>
-        <module>samoyed-spring-boot-starter-security</module>
-        <module>samoyed-spring-boot-starter-web</module>
-        <module>samoyed-spring-boot-starter-job</module>
-    </modules>
 
+    <dependencies>
+        <!-- Job 定时任务相关 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.samoyed</groupId>
+            <artifactId>samoyed-common</artifactId>
+        </dependency>
+    </dependencies>
 </project>
