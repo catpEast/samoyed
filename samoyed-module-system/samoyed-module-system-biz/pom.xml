@@ -18,4 +18,15 @@
         system 模块包括用户、部门、权限、数据字典等通用业务，支撑上层的核心业务
     </description>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+        </dependency>
+    </dependencies>
 </project>

@@ -24,6 +24,7 @@
         <module>samoyed-spring-boot-starter-security</module>
         <module>samoyed-spring-boot-starter-web</module>
         <module>samoyed-spring-boot-starter-job</module>
+        <module>samoyed-spring-boot-starter-biz-data-permission2</module>
     </modules>
 
 </project>
